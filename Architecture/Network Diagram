@@ -1,20 +1,16 @@
-                    VMware Workstation
-
-         ┌───────────────────────────────────┐
-         │          Virtual Network           │
-         │                                   │
-         │   192.168.149.0/24                │
-         │                                   │
-         └───────────────────────────────────┘
-                  │
-        ┌─────────┼─────────┐
-        │         │         │
-        │         │         │
-   DC01       WS01      ELK01
-Windows      Windows     Ubuntu
-Server       11 Pro      Elastic
-
- Active       Sysmon     Fleet Server
-Directory     Elastic    Kibana
- DNS          Agent      Elasticsearch
- DHCP
+                               Internet
+                        │
+                 VMware Workstation
+                        │
+        ┌───────────────┼───────────────┐
+        │               │               │
+      DC01            WS01           ELK01
+   Active Directory   Sysmon       Elasticsearch
+        DNS        Elastic Agent      Kibana
+                                      Fleet
+                        │
+                  Detection Rules
+                        │
+                      Alerts
+                        │
+                 Incident Response
