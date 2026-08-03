@@ -1,0 +1,30 @@
+# Virtual Machines
+
+## DC01
+
+| Item | Value |
+|------|-------|
+| Operating System | Windows Server 2022 |
+| Role | Domain Controller |
+| Services | Active Directory, DNS |
+| Domain | cyberlab.local |
+
+---
+
+## WS01
+
+| Item | Value |
+|------|-------|
+| Operating System | Windows 11 Pro |
+| Role | Workstation |
+| Security Tools | Sysmon, Elastic Agent |
+
+---
+
+## ELK01
+
+| Item | Value |
+|------|-------|
+| Operating System | Ubuntu Server |
+| Role | Elastic Stack |
+| Services | Elasticsearch, Kibana, Fleet Server |
