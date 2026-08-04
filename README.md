@@ -31,15 +31,9 @@ The objective of this project is to demonstrate hands-on experience with:
 
 ---
 
-# Project Architecture
+![Lab Overview](Architecture/01-Lab-Overview.png)
 
-![Lab Overview](images/01-Lab-Overview.png)
-
----
-
-# Detection Pipeline
-
-![Detection Pipeline](images/02-Detection-Pipeline.png)
+![Detection Pipeline](Architecture/02-Detection-Pipeline.png)
 
 ---
 
