@@ -1,233 +1,204 @@
 # 🛡️ Enterprise SOC Home Lab
 
-> A hands-on enterprise Security Operations Center (SOC) home lab built to simulate real-world cybersecurity operations using Active Directory, Sysmon, Elastic Security, and VMware.
+![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
+![Elastic Security](https://img.shields.io/badge/SIEM-Elastic%20Security-005571)
+![Sysmon](https://img.shields.io/badge/Endpoint-Sysmon-blue)
+![Windows](https://img.shields.io/badge/OS-Windows%2011-0078D6)
+![Active Directory](https://img.shields.io/badge/Directory-Active%20Directory-003366)
+![MITRE ATT&CK](https://img.shields.io/badge/Framework-MITRE_ATT%26CK-red)
+![KQL](https://img.shields.io/badge/Language-KQL-orange)
 
 ---
 
-# 📖 Project Overview
+# Enterprise Security Operations Center (SOC) Home Lab
 
-This project demonstrates the design, deployment, and operation of an enterprise-style Security Operations Center (SOC) environment. The lab provides a realistic platform for developing practical cybersecurity skills including system administration, endpoint monitoring, detection engineering, threat hunting, and incident response.
+## Overview
 
-The environment is built entirely in VMware Workstation and integrates Windows infrastructure with the Elastic Stack to collect, analyze, and investigate security telemetry generated from Windows endpoints.
+This project demonstrates the design, deployment, and operation of a simulated Enterprise Security Operations Center (SOC) using industry-standard security tools and enterprise infrastructure.
 
-Unlike tutorial-based labs, this project focuses on documenting the complete lifecycle of building, monitoring, detecting, and investigating security events.
+The lab was built to simulate a real-world corporate environment where endpoint telemetry is collected, centralized, analyzed, detected, and investigated using Elastic Security.
 
----
+The objective of this project is to demonstrate hands-on experience with:
 
-# 🎯 Project Objectives
-
-- Design and deploy an enterprise Active Directory environment
-- Configure Windows Server 2022 and Windows 11 endpoints
-- Deploy Sysmon for advanced endpoint telemetry
-- Centralize Windows event logs using Elastic Security
-- Create custom detection rules using KQL
-- Investigate security alerts and map activity to the MITRE ATT&CK framework
-- Simulate attacker techniques in a controlled lab environment
-- Document the complete build and investigation process
+- Security Monitoring
+- Detection Engineering
+- Threat Hunting
+- Incident Response
+- Active Directory Administration
+- Endpoint Logging
+- SIEM Investigation
+- MITRE ATT&CK Mapping
 
 ---
 
-# 🏗️ Lab Architecture
+# Project Architecture
 
-| Component | Status |
-|------------|--------|
-| VMware Workstation Pro | ✅ Complete |
-| Windows Server 2022 Domain Controller | ✅ Complete |
-| Active Directory Domain Services | ✅ Complete |
-| Organizational Units | ✅ Complete |
-| Security Groups | ✅ Complete |
-| Windows 11 Workstation | ✅ Complete |
-| Sysmon Deployment | ✅ Complete |
-| Ubuntu Server | ✅ Complete |
-| Elastic Fleet Server | ✅ Complete |
-| Elastic Agent | ✅ Complete |
-| Elastic Security | ✅ Complete |
-| Windows Event Collection | ✅ Complete |
-| Sysmon Log Collection | ✅ Complete |
-| Custom Detection Rules | ✅ Complete |
-| Alert Investigation | ✅ Complete |
-| Kali Linux Attack VM | 🚧 Planned |
+![Lab Overview](images/01-Lab-Overview.png)
 
 ---
 
-# 💻 Technologies Used
+# Detection Pipeline
+
+![Detection Pipeline](images/02-Detection-Pipeline.png)
+
+---
+
+# Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| VMware Workstation Pro | Virtualization Platform |
+| Windows Server 2022 | Active Directory Domain Controller |
+| Windows 11 | Endpoint Workstation |
+| Ubuntu Server | Elastic Stack |
+| Elastic Security | SIEM Platform |
+| Elasticsearch | Log Storage |
+| Kibana | Visualization & Investigation |
+| Fleet | Agent Management |
+| Elastic Agent | Log Collection |
+| Sysmon | Endpoint Telemetry |
+| PowerShell | Administrative Testing |
+| MITRE ATT&CK | Threat Mapping |
+| KQL | Detection Queries |
+
+---
+
+# Skills Demonstrated
+
+- Security Operations Center (SOC)
+- SIEM Administration
+- Elastic Security
+- Detection Engineering
+- Threat Hunting
+- Incident Investigation
+- Active Directory
+- Windows Administration
+- Endpoint Security
+- Sysmon Configuration
+- Fleet Management
+- KQL Query Development
+- Log Analysis
+- MITRE ATT&CK Mapping
+- Security Documentation
+
+---
+
+# Documentation
+
+| Document | Description |
+|----------|-------------|
+| [📄 Detection Rule](docs/Detection-Rule-Suspicious-PowerShell.md) | Custom KQL detection for PowerShell execution |
+| [📄 Threat Hunting Report](docs/Threat-Hunting-Report.md) | Proactive threat hunting using Elastic Security |
+| [📄 Network Diagram](Architecture/Network%20Diagram.md) | Enterprise network topology and architecture |
+| [📄 Architecture Documentation](Architecture/README.md) | Lab architecture overview and design |
+| [📄 Incident Report](Incident-Reports/IR-001-PowerShell-Process-Detection.md) | End-to-end incident investigation workflow |
+| 📄 Virtual Machine Documentation | Located in the **Architecture** folder |
+---
+
+# Enterprise Environment
 
 ## Infrastructure
 
-- VMware Workstation Pro
-- Windows Server 2022
-- Windows 11 Pro
-- Ubuntu Server
-
-## Identity
-
-- Active Directory
-- Group Policy
-- Organizational Units
-- Security Groups
-
-## Security Monitoring
-
-- Elastic Stack 9.x
-- Elastic Security
+- Domain Controller (DC01)
+- Windows 11 Endpoint (WS01)
+- Ubuntu Elastic Server
 - Fleet Server
-- Elastic Agent
+- Elasticsearch
 - Kibana
-- Sysmon
-
-## Scripting
-
-- PowerShell
-- KQL (Kibana Query Language)
 
 ---
 
-# 🔍 Detection Engineering
-
-Current detections include:
-
-- ✅ Sysmon Process Creation Detection
-- ✅ PowerShell Process Execution Detection
-
-Upcoming detections:
-
-- Encoded PowerShell Commands
-- Command Prompt Abuse
-- LOLBins (Living off the Land Binaries)
-- Brute Force Authentication
-- Scheduled Task Persistence
-- New Local Administrator Creation
-- RDP Activity
-- PsExec Execution
-- Mimikatz Activity
-- BloodHound Enumeration
-
----
-
-# 🚨 Incident Investigation
-
-Current investigation workflow:
-
-1. Generate endpoint activity
-2. Collect telemetry using Sysmon
-3. Forward events through Elastic Agent
-4. Analyze events in Kibana Discover
-5. Trigger custom detection rules
-6. Investigate generated alerts
-7. Map activity to MITRE ATT&CK
-8. Document findings
-
----
-
-# 🛠️ Skills Demonstrated
-
-- Active Directory Administration
-- Windows Server Administration
-- Endpoint Monitoring
-- Sysmon Deployment
-- Elastic Stack Administration
-- Fleet Management
-- Log Analysis
-- Detection Engineering
-- KQL Query Development
-- Security Alert Investigation
-- MITRE ATT&CK Mapping
-- Incident Response
-- Technical Documentation
-
----
-
-# 📂 Repository Structure
+# Security Monitoring Workflow
 
 ```
-enterprise-soc-home-lab
+User Activity
+      │
+      ▼
+Windows Endpoint
+      │
+      ▼
+Sysmon
+      │
+      ▼
+Elastic Agent
+      │
+      ▼
+Fleet Server
+      │
+      ▼
+Elasticsearch
+      │
+      ▼
+Kibana
+      │
+      ▼
+Detection Rule
+      │
+      ▼
+Security Alert
+      │
+      ▼
+Threat Hunting
+      │
+      ▼
+Incident Investigation
+```
+
+---
+
+# MITRE ATT&CK Coverage
+
+| Tactic | Technique |
+|----------|-----------|
+| Execution | PowerShell (T1059.001) |
+| Execution | Command & Scripting Interpreter |
+| Defense Evasion | Living-off-the-Land Binaries |
+| Initial Access | User Execution |
+| Command & Control | Ingress Tool Transfer |
+
+---
+
+# Repository Structure
+
+```
+Enterprise-SOC-Home-Lab
 │
-├── Active-Directory
-├── Architecture
-├── Attack-Simulations
-├── Elastic
-├── Incident-Reports
-├── Resources
-├── Screenshots
-├── Scripts
-├── Sysmon
+├── docs
+│   ├── Detection-Rule-Suspicious-PowerShell.md
+│   ├── Threat-Hunting-Report.md
+│   ├── Incident-Report.md
+│   └── Network-Diagram.md
+│
+├── images
+│   ├── architecture
+│   ├── dashboards
+│   ├── detection-rule
+│   └── incident-response
+│
+├── virtual-machines
+│
 └── README.md
 ```
 
 ---
 
-# 🚀 Project Roadmap
+# Future Enhancements
 
-## ✅ Phase 1 — Infrastructure
-
-- VMware Environment
-- Active Directory
-- Windows Server 2022
-- Windows 11 Endpoint
-- Sysmon Deployment
-
-## ✅ Phase 2 — SIEM Deployment
-
-- Ubuntu Server
-- Elastic Stack
-- Fleet Server
-- Elastic Agent
-- Windows Log Collection
-- Sysmon Integration
-- Custom Detection Rules
-- Alert Validation
-
-## 🚧 Phase 3 — Detection Engineering
-
-- Advanced KQL Rules
-- Detection Tuning
-- Dashboard Development
-- Threat Hunting
-
-## 🚧 Phase 4 — Attack Simulation
-
-- PowerShell Abuse
-- Command Prompt Abuse
-- BloodHound
-- Kerberoasting
-- Lateral Movement
-- Privilege Escalation
-- Persistence
-- Incident Response
-
----
-
-# 📈 Current Status
-
-**Status:** 🟢 Active Development
-
-Latest accomplishments:
-
-- Successfully deployed Elastic Fleet
-- Configured Elastic Agent
-- Integrated Sysmon telemetry
-- Created custom KQL detection rules
-- Generated and investigated first Elastic Security alerts
-- Validated end-to-end detection pipeline
-
----
-
-# 📚 Future Enhancements
-
-- Elastic Dashboards
-- Sigma Rule Conversion
-- Detection-as-Code
+- Windows Event Forwarding (WEF)
+- Sysmon Configuration Tuning
+- Sigma Rule Integration
+- Additional Detection Rules
 - Malware Analysis
-- Threat Intelligence Integration
-- SOAR Automation
-- Purple Team Exercises
+- Atomic Red Team Testing
+- ATT&CK Coverage Expansion
+- Automated Alerting
+- SOAR Integration
+- Threat Intelligence Feeds
 
 ---
 
-# 👨‍💻 Author
+# Project Outcomes
 
-**Alexei Pavlenco**
+This lab successfully demonstrates practical experience with enterprise security monitoring, centralized logging, endpoint detection, threat hunting, incident response, and detection engineering.
 
-Cybersecurity Analyst
-
-Building practical cybersecurity skills through enterprise security engineering, detection engineering, and incident response projects.
+The project closely mirrors workflows performed by Security Operations Center (SOC) analysts and provides a foundation for future security engineering and threat detection projects.
