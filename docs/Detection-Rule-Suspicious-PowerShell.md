@@ -85,7 +85,8 @@ Elastic Agent forwards these events into Elasticsearch where they become searcha
 ## KQL Query
 
 ```kql
-winlog.event_id: 1 and process.name: "powershell.exe"
+winlog.event_id: 1 and
+winlog.event_data.Image: "*\\powershell.exe"
 ```
 
 This query identifies Sysmon Process Creation events where the executed process is **powershell.exe**.
@@ -98,7 +99,8 @@ The rule can also detect PowerShell Core.
 
 ```kql
 winlog.event_id: 1 and
-(process.name: "powershell.exe" or process.name: "pwsh.exe")
+winlog.event_data.Image: "*\\powershell.exe"
+```
 ```
 
 ---
@@ -226,31 +228,61 @@ Example:
 
 ```kql
 winlog.event_id: 1 and
-process.name: "powershell.exe" and
+winlog.event_data.Image: "*\\powershell.exe" and
 process.command_line: (
-    "*-enc*" or
-    "*-encodedcommand*" or
-    "*downloadstring*" or
-    "*invoke-webrequest*" or
-    "*bypass*"
+  "*-enc*" or
+  "*-encodedcommand*" or
+  "*downloadstring*" or
+  "*invoke-webrequest*" or
+  "*bypass*"
 )
+```
 ```
 
 ---
 
 # Evidence
 
-The following screenshots document the detection workflow.
+# Evidence
 
-| Screenshot | Description |
-|------------|-------------|
-| 01 | PowerShell Test Command |
-| 02 | Sysmon Event ID 1 |
-| 03 | Kibana Discover |
-| 04 | Detection Rule Configuration |
-| 05 | Elastic Security Alert |
-| 06 | Alert Investigation |
-| 07 | MITRE ATT&CK Mapping |
+## 1. PowerShell Test
+
+![PowerShell Test](../images/detection-rule/01-PowerShell-Test.png)
+
+---
+
+## 2. Sysmon Event ID 1
+
+![Sysmon Event](../images/detection-rule/02-Sysmon-EventID1.png)
+
+---
+
+## 3. Kibana Discover
+
+![Kibana Discover](../images/detection-rule/03-Kibana-Discover.png)
+
+---
+
+## 4. Detection Rule Configuration
+
+![Detection Rule](../images/detection-rule/04-Detection-Rule.png)
+![Detection Rule](../images/detection-rule/05-Detection-Rule.png)
+![Detection Rule](../images/detection-rule/06-Detection-Rule.png)
+
+---
+
+## 5. Elastic Security Alert
+
+![Security Alert](../images/detection-rule/07-Security-Alert.png)
+
+---
+
+## 6. Alert Investigation
+
+![Alert Investigation](../images/detection-rule/08-Alert-Investigation.png)
+![Alert Investigation](../images/detection-rule/09-Alert-Investigation.png)
+![Alert Investigation](../images/detection-rule/10-Alert-Investigation.png)
+![Alert Investigation](../images/detection-rule/11-Alert-Investigation.png)
 
 ---
 
