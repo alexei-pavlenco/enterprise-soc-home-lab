@@ -87,12 +87,12 @@ The objective of this project is to demonstrate hands-on experience with:
 
 | Document | Description |
 |----------|-------------|
-| [📄 Detection Rule](docs/Detection-Rule-Suspicious-PowerShell.md) | Custom KQL detection for PowerShell execution |
-| [📄 Threat Hunting Report](docs/Threat-Hunting-Report.md) | Proactive threat hunting using Elastic Security |
-| [📄 Network Diagram](Architecture/Network%20Diagram.md) | Enterprise network topology and architecture |
-| [📄 Architecture Documentation](Architecture/README.md) | Lab architecture overview and design |
-| [📄 Incident Report](Incident-Reports/IR-001-PowerShell-Process-Detection.md) | End-to-end incident investigation workflow |
-| 📄 Virtual Machine Documentation | Located in the **Architecture** folder |
+| [📄 Architecture Overview](Architecture/README.md) | Enterprise SOC architecture |
+| [📄 Network Diagram](Architecture/Network-Diagram.md) | Network topology |
+| [📄 Detection Rule](docs/Detection-Rule-Suspicious-PowerShell.md) | PowerShell detection engineering |
+| [📄 Threat Hunting Report](docs/Threat-Hunting-Report.md) | Threat hunting methodology |
+| [📄 Incident Report](Incident-Reports/IR-001-PowerShell-Process-Detection.md) | Incident investigation workflow |
+| [📄 Virtual Machines](Architecture/Virtual-Machines.md) | Virtual machine configuration |
 ---
 
 # Enterprise Environment
