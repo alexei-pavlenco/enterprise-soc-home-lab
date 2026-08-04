@@ -1,3 +1,13 @@
+<p align="center">
+  <img src="images/github-banner.png"
+       alt="Enterprise SOC Home Lab Banner"
+       width="100%">
+</p>
+
+<p align="center">
+  <strong>Enterprise Security Operations Center (SOC) | Threat Hunting | Detection Engineering | Elastic Security | Active Directory</strong>
+</p>
+
 # 🛡️ Enterprise SOC Home Lab
 
 ![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
@@ -10,9 +20,7 @@
 
 ---
 
-# Enterprise Security Operations Center (SOC) Home Lab
-
-## Overview
+## Project Overview
 
 This project demonstrates the design, deployment, and operation of a simulated Enterprise Security Operations Center (SOC) using industry-standard security tools and enterprise infrastructure.
 
