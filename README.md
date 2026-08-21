@@ -89,14 +89,38 @@ The objective of this project is to demonstrate hands-on experience with:
 
 | Document | Description |
 |----------|-------------|
+| [📁 Detection Rules](Detection-Rules/README.md) | Custom detection-rule library and coverage |
+| [📄 PowerShell Execution Policy Bypass](Detection-Rules/PowerShell-Execution-Policy-Bypass.md) | Sysmon Event ID 1 detection, testing, and validation |
+| [📄 Windows User Account Creation](Detection-Rules/Windows-User-Account-Creation.md) | Windows Event ID 4720 detection and investigation |
 | [📄 Architecture Overview](Architecture/README.md) | Enterprise SOC architecture |
 | [📄 Network Diagram](Architecture/Network-Diagram.md) | Network topology |
-| [📄 Detection Rule](docs/Detection-Rule-Suspicious-PowerShell.md) | PowerShell detection engineering |
-| [📄 Threat Hunting Report](docs/Threat-Hunting-Report.md) | Threat hunting methodology |
-| [📄 Incident Report](Incident-Reports/IR-001-PowerShell-Process-Detection.md) | Incident investigation workflow |
-| [📄 Virtual Machines](Architecture/Virtual-Machines.md) | Virtual machine configuration |
+| [📄 Suspicious PowerShell Rule](docs/Detection-Rule-Suspicious-PowerShell.md) | Original PowerShell detection-engineering workflow |
+| [📄 Threat Hunting Report](docs/Threat-Hunting-Report.md) | Threat-hunting methodology |
+| [📄 Incident Report](Incident-Reports/IR-001-PowerShell-Process-Detection.md) | Incident-investigation workflow |
+| [📄 Virtual Machines](Architecture/Virtual-Machines.md) | Virtual-machine configuration |
 ---
 
+---
+
+# Detection Engineering Highlights
+
+## Suspicious PowerShell Execution
+
+- Collected Sysmon Event ID 1 process-creation telemetry from `WS01`
+- Developed KQL logic for suspicious PowerShell command-line indicators
+- Executed a controlled `ExecutionPolicy Bypass` test
+- Validated matching events in Kibana Discover
+- Documented investigation guidance and potential false positives
+
+## New Windows User Account
+
+- Monitored Windows Security Event ID 4720
+- Created the temporary `SOC-Lab-TEST` account during controlled testing
+- Generated and investigated a medium-severity Elastic alert
+- Verified the initiating user and target-account fields
+- Added an analyst investigation note
+- Removed the temporary account after validation
+  
 # Enterprise Environment
 
 ## Infrastructure
@@ -152,33 +176,29 @@ Incident Investigation
 
 | Tactic | Technique |
 |----------|-----------|
-| Execution | PowerShell (T1059.001) |
-| Execution | Command & Scripting Interpreter |
-| Defense Evasion | Living-off-the-Land Binaries |
-| Initial Access | User Execution |
-| Command & Control | Ingress Tool Transfer |
+| Execution | PowerShell — T1059.001 |
+| Persistence | Create Account: Local Account — T1136.001 |
+| Defense Evasion | Obfuscated/Compressed Files and Information — T1027 |
+| Command and Control | Ingress Tool Transfer — T1105 |
 
 ---
 
-# Repository Structure
-
-```
-Enterprise-SOC-Home-Lab
+enterprise-soc-home-lab/
 │
-├── docs
-│   ├── Detection-Rule-Suspicious-PowerShell.md
-│   ├── Threat-Hunting-Report.md
-│   ├── Incident-Report.md
-│   └── Network-Diagram.md
-│
-├── images
-│   ├── architecture
-│   ├── dashboards
-│   ├── detection-rule
-│   └── incident-response
-│
-├── virtual-machines
-│
+├── Active-Directory/
+├── Architecture/
+├── Attack-Simulations/
+├── Detection-Rules/
+│   ├── README.md
+│   ├── PowerShell-Execution-Policy-Bypass.md
+│   └── Windows-User-Account-Creation.md
+├── Elastic/
+├── Incident-Reports/
+├── Resources/
+├── Scripts/
+├── Sysmon/
+├── docs/
+├── images/
 └── README.md
 ```
 
