@@ -18,7 +18,7 @@ The rules use Windows Sysmon telemetry collected from the `WS01` endpoint and fo
 | Detection                    | Objective                                                          | MITRE ATT&CK                                        |
 | ---------------------------- | ------------------------------------------------------------------ | --------------------------------------------------- |
 | PowerShell Execution         | Identify PowerShell process creation                               | T1059.001 — PowerShell                              |
-| Execution Policy Bypass      | Detect PowerShell launched with the `Bypass` argument              | T1059.001 — PowerShell                              |
+| [Execution Policy Bypass](PowerShell-Execution-Policy-Bypass.md) | Detect PowerShell launched with the `Bypass` argument | T1059.001 — PowerShell       |
 | Encoded PowerShell           | Identify potentially obfuscated PowerShell commands                | T1027 — Obfuscated/Compressed Files and Information |
 | Suspicious Download Commands | Detect PowerShell download activity using commonly abused commands | T1105 — Ingress Tool Transfer                       |
 
