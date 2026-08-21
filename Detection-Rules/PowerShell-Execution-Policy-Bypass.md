@@ -120,4 +120,4 @@ A harmless PowerShell command was executed on `WS01` with the `ExecutionPolicy B
 
 Kibana Discover returned two matching Sysmon Event ID 1 records. The results confirmed that the complete command line, `ExecutionPolicy Bypass` argument, PowerShell image path, and source host were successfully ingested.
 
-![PowerShell bypass events in Kibana Discover](../images/images/detection-rule/18-PowerShell-Bypass-Discover-Results.png)
+![PowerShell bypass events in Kibana Discover](../images/images/detection-rule/18-PowerShell-Bypass-Discovery-Results.png)
