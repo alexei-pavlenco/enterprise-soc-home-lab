@@ -183,23 +183,21 @@ Incident Investigation
 
 ---
 
-enterprise-soc-home-lab/
-│
-├── Active-Directory/
-├── Architecture/
-├── Attack-Simulations/
-├── Detection-Rules/
-│   ├── README.md
-│   ├── PowerShell-Execution-Policy-Bypass.md
-│   └── Windows-User-Account-Creation.md
-├── Elastic/
-├── Incident-Reports/
-├── Resources/
-├── Scripts/
-├── Sysmon/
-├── docs/
-├── images/
-└── README.md
+# Repository Structure
+
+- [`Active-Directory/`](Active-Directory/) — Domain and identity documentation
+- [`Architecture/`](Architecture/) — Lab architecture and network diagrams
+- [`Attack-Simulations/`](Attack-Simulations/) — Planned adversary simulations
+- [`Detection-Rules/`](Detection-Rules/) — Custom Elastic detection rules
+  - [`PowerShell-Execution-Policy-Bypass.md`](Detection-Rules/PowerShell-Execution-Policy-Bypass.md)
+  - [`Windows-User-Account-Creation.md`](Detection-Rules/Windows-User-Account-Creation.md)
+- [`Elastic/`](Elastic/) — Elastic Stack deployment and configuration
+- [`Incident-Reports/`](Incident-Reports/) — Documented security investigations
+- [`Resources/`](Resources/) — Supporting project resources
+- [`Scripts/`](Scripts/) — Administrative and testing scripts
+- [`Sysmon/`](Sysmon/) — Sysmon installation and configuration
+- [`docs/`](docs/) — Detection and threat-hunting reports
+- [`images/`](images/) — Screenshots and visual evidence
 
 ---
 
