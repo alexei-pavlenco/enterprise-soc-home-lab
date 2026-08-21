@@ -15,7 +15,7 @@ This detection identifies PowerShell processes launched with the `ExecutionPolic
 | Endpoint               | WS01                               |
 | SIEM platform          | Elastic Security                   |
 | Severity               | Medium                             |
-| Risk score             | 47                                 |
+| Risk score             | 50                                 |
 | MITRE ATT&CK tactic    | Execution                          |
 | MITRE ATT&CK technique | T1059.001 — PowerShell             |
 
@@ -101,3 +101,23 @@ If the activity is unauthorized or suspicious:
 ## Detection Status
 
 **Status:** Created and tested in the Enterprise SOC Home Lab.
+
+## Evidence
+
+### Suspicious PowerShell Detection Logic
+
+The custom rule searches Sysmon process-creation events for PowerShell command lines containing potentially suspicious indicators.
+
+![Suspicious PowerShell rule query](../images/images/detection-rule/16-Suspicious-PowerShell-Rule-Query.png)
+
+### Controlled Execution Policy Bypass Test
+
+A harmless PowerShell command was executed on `WS01` with the `ExecutionPolicy Bypass` argument.
+
+![PowerShell execution policy bypass test](../images/images/detection-rule/17-PowerShell-Bypass-Test.png)
+
+### Kibana Discover Validation
+
+Kibana Discover returned two matching Sysmon Event ID 1 records. The results confirmed that the complete command line, `ExecutionPolicy Bypass` argument, PowerShell image path, and source host were successfully ingested.
+
+![PowerShell bypass events in Kibana Discover](../images/images/detection-rule/18-PowerShell-Bypass-Discover-Results.png)
