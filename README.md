@@ -200,7 +200,6 @@ enterprise-soc-home-lab/
 ├── docs/
 ├── images/
 └── README.md
-```
 
 ---
 
